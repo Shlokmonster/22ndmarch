@@ -1,9 +1,12 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors({ origin: 'http://localhost:5174' }));
@@ -12,7 +15,7 @@ app.use(express.json());
 // Connect to MongoDB
 const db = async () => {
     try {
-        await mongoose.connect('mongodb://localhost:27017/aashubirthday');
+        await mongoose.connect(process.env.MONGO_URL);
         console.log('Connected to MongoDB');
     } catch (error) {
         console.log('MongoDB connection error', error);
