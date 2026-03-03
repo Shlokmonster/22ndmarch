@@ -1,0 +1,412 @@
+/* ===========================
+   Form Page Background
+   =========================== */
+.form-page-bg {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg,
+            #f9a8b0 0%,
+            #fcc5b0 20%,
+            #fde8c0 55%,
+            #fdf5d0 100%);
+    padding: 48px 16px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Sparkles (reuse from App.css logic) */
+.form-page-bg .sparkle {
+    position: fixed;
+    border-radius: 50%;
+    background: rgba(200, 160, 80, 0.45);
+    pointer-events: none;
+}
+
+.form-page-bg .sparkle-1 {
+    width: 6px;
+    height: 6px;
+    top: 12%;
+    right: 10%;
+}
+
+.form-page-bg .sparkle-2 {
+    width: 5px;
+    height: 5px;
+    top: 60%;
+    right: 5%;
+}
+
+.form-page-bg .sparkle-3 {
+    width: 4px;
+    height: 4px;
+    bottom: 20%;
+    left: 8%;
+}
+
+.form-page-bg .sparkle-4 {
+    width: 5px;
+    height: 5px;
+    top: 35%;
+    left: 5%;
+}
+
+/* ===========================
+   Wrapper
+   =========================== */
+.form-wrapper {
+    width: 100%;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===========================
+   Form Header Card
+   =========================== */
+.form-header-card {
+    background: rgba(255, 248, 242, 0.92);
+    border-radius: 24px;
+    padding: 36px 40px 30px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 40px rgba(180, 100, 80, 0.10);
+}
+
+.back-link {
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    background: none;
+    border: none;
+    color: #d08060;
+    font-size: 0.88rem;
+    cursor: pointer;
+    font-family: Georgia, serif;
+    font-style: italic;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: background 0.15s;
+}
+
+.back-link:hover {
+    background: rgba(240, 128, 144, 0.1);
+}
+
+.form-main-title {
+    font-size: 2rem;
+    font-weight: 700;
+    font-style: italic;
+    font-family: Georgia, serif;
+    background: linear-gradient(90deg, #e8748a 0%, #d4875a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.form-main-sub {
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    color: #b0836a;
+    font-style: normal;
+}
+
+/* ===========================
+   Section Cards
+   =========================== */
+.form-section-card {
+    background: rgba(255, 248, 242, 0.92);
+    border-radius: 24px;
+    padding: 32px 36px;
+    box-shadow: 0 8px 40px rgba(180, 100, 80, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1.5px solid rgba(230, 180, 150, 0.35);
+    padding-bottom: 14px;
+}
+
+.section-emoji {
+    font-size: 1.2rem;
+}
+
+.section-title {
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #c06848;
+    margin: 0;
+}
+
+/* ===========================
+   Question Block
+   =========================== */
+.question-block {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.question-text {
+    font-family: Georgia, serif;
+    font-size: 0.97rem;
+    color: #4a2e20;
+    line-height: 1.55;
+    font-weight: 600;
+}
+
+.q-number {
+    color: #e8748a;
+    font-weight: 700;
+    margin-right: 2px;
+}
+
+/* ===========================
+   Option Pills
+   =========================== */
+.options-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.option-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #fff7f2;
+    border: 1.8px solid rgba(220, 160, 130, 0.45);
+    border-radius: 50px;
+    padding: 9px 18px;
+    font-family: Georgia, serif;
+    font-size: 0.87rem;
+    color: #7a4a38;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    user-select: none;
+}
+
+.option-pill input {
+    display: none;
+}
+
+.option-pill:hover {
+    border-color: #e8748a;
+    background: rgba(232, 116, 138, 0.07);
+    color: #c0506a;
+}
+
+.option-pill.selected {
+    background: linear-gradient(90deg, rgba(240, 128, 144, 0.14) 0%, rgba(212, 160, 80, 0.14) 100%);
+    border-color: #e8748a;
+    color: #c0506a;
+    font-weight: 700;
+    box-shadow: 0 2px 10px rgba(232, 116, 138, 0.18);
+}
+
+.option-pill.selected::before {
+    content: '✓ ';
+    color: #e8748a;
+    font-weight: 900;
+    font-size: 0.8rem;
+}
+
+/* ===========================
+   Text Inputs
+   =========================== */
+.text-input {
+    width: 100%;
+    background: #fff7f2;
+    border: 1.8px solid rgba(220, 160, 130, 0.45);
+    border-radius: 14px;
+    padding: 13px 18px;
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    color: #4a2e20;
+    outline: none;
+    resize: none;
+    transition: border-color 0.18s, box-shadow 0.18s;
+    box-sizing: border-box;
+}
+
+.text-input::placeholder {
+    color: #c8a090;
+    font-style: italic;
+}
+
+.text-input:focus {
+    border-color: #e8748a;
+    box-shadow: 0 0 0 3px rgba(232, 116, 138, 0.13);
+}
+
+.textarea {
+    line-height: 1.6;
+}
+
+/* ===========================
+   Submit Row
+   =========================== */
+.form-submit-row {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 20px;
+}
+
+.kiss {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.kiss-icon {
+    font-size: 10rem;
+    color: #e8748a;
+}
+
+.submit-btn {
+    background: linear-gradient(90deg, #f08090 0%, #d4a050 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 52px;
+    font-size: 1rem;
+    font-family: Georgia, serif;
+    font-style: italic;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s, transform 0.15s;
+    box-shadow: 0 4px 20px rgba(240, 128, 144, 0.35);
+}
+
+.submit-btn:hover {
+    opacity: 0.92;
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.submit-error {
+    width: 100%;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 0.88rem;
+    color: #c0506a;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.form-submit-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ===========================
+   Submitted State
+   =========================== */
+.submitted-card {
+    background: rgba(255, 248, 242, 0.95);
+    border-radius: 28px;
+    padding: 60px 50px;
+    text-align: center;
+    max-width: 440px;
+    width: 90%;
+    box-shadow: 0 8px 40px rgba(180, 100, 80, 0.12);
+    animation: fadeInUp 0.5s ease;
+}
+
+.submitted-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.submitted-title {
+    font-family: Georgia, serif;
+    font-size: 1.9rem;
+    font-style: italic;
+    font-weight: 700;
+    background: linear-gradient(90deg, #e8748a 0%, #d4875a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 14px;
+}
+
+.submitted-sub {
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+    color: #b0836a;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.form-back-btn {
+    background: linear-gradient(90deg, #f08090 0%, #d4a050 100%);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 13px 36px;
+    font-size: 0.95rem;
+    font-family: Georgia, serif;
+    font-style: italic;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s;
+    box-shadow: 0 4px 18px rgba(240, 128, 144, 0.3);
+}
+
+.form-back-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+@media (max-width: 520px) {
+    .form-section-card {
+        padding: 24px 20px;
+    }
+
+    .form-header-card {
+        padding: 36px 24px 26px;
+    }
+
+    .form-main-title {
+        font-size: 1.55rem;
+    }
+
+    .option-pill {
+        padding: 8px 14px;
+        font-size: 0.82rem;
+    }
+}

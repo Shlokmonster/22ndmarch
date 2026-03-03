@@ -1,0 +1,194 @@
+/* ===========================
+   Global Reset
+   =========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  min-height: 100vh;
+}
+
+/* ===========================
+   Page Background
+   =========================== */
+.page-bg {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    #f9a8b0 0%,
+    #fcc5b0 20%,
+    #fde8c0 55%,
+    #fdf5d0 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===========================
+   Sparkle Dots
+   =========================== */
+.sparkle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(200, 160, 80, 0.45);
+}
+
+.sparkle-1 { width: 6px; height: 6px; top: 15%; right: 18%; }
+.sparkle-2 { width: 5px; height: 5px; top: 65%; right: 8%;  }
+.sparkle-3 { width: 4px; height: 4px; top: 80%; right: 22%; }
+.sparkle-4 { width: 5px; height: 5px; bottom: 12%; left: 10%; }
+.sparkle-5 { width: 4px; height: 4px; top: 30%; left: 8%;   }
+
+/* ===========================
+   Card
+   =========================== */
+.card {
+  background: rgba(255, 248, 242, 0.92);
+  border-radius: 28px;
+  padding: 52px 60px 48px;
+  text-align: center;
+  max-width: 520px;
+  width: 90%;
+  box-shadow: 0 8px 40px rgba(180, 100, 80, 0.10);
+}
+
+/* ===========================
+   Title
+   =========================== */
+.card-title {
+  font-size: 2.35rem;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.25;
+  margin-bottom: 14px;
+  /* gradient text */
+  background: linear-gradient(90deg, #e8748a 0%, #d4875a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gift-box {
+  display: inline-block;
+  /* override gradient – show real emoji color */
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: initial;
+  background-clip: unset;
+  font-style: normal;
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+/* ===========================
+   Subtitle
+   =========================== */
+.card-subtitle {
+  font-family: 'Georgia', serif;
+  font-size: 0.95rem;
+  color: #b0836a;
+  margin-bottom: 36px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* ===========================
+   Countdown Row
+   =========================== */
+.countdown-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 38px;
+}
+
+.countdown-unit {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 20px 14px;
+  min-width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(180, 100, 80, 0.07);
+}
+
+.countdown-number {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3d2b1f;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.countdown-label {
+  font-family: Arial, sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #b5a09a;
+  text-transform: uppercase;
+}
+
+/* ===========================
+   Surprise Button
+   =========================== */
+.surprise-btn {
+  background: linear-gradient(90deg, #f08090 0%, #d4a050 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 42px;
+  font-size: 1rem;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s, transform 0.15s;
+  box-shadow: 0 4px 18px rgba(240, 128, 144, 0.35);
+}
+
+.surprise-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.surprise-btn:active {
+  transform: translateY(0);
+}
+
+/* ===========================
+   Revealed Message
+   =========================== */
+.surprise-msg {
+  margin-top: 28px;
+  font-size: 1.1rem;
+  color: #c0607a;
+  font-style: italic;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+@media (max-width: 480px) {
+  .card { padding: 36px 24px 36px; }
+  .card-title { font-size: 1.7rem; }
+  .countdown-unit { min-width: 62px; padding: 14px 10px 10px; }
+  .countdown-number { font-size: 1.5rem; }
+}
