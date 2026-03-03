@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './SurpriseForm.css';
 
-// Falls back to localhost when running `npm run dev`
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+// Falls back to the Render backend if VITE_API_URL is not set
+const API_URL = import.meta.env.VITE_API_URL || 'https://two2ndmarch.onrender.com';
 
 const QUESTIONS = [
     {
