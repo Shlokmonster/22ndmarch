@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import './SurpriseForm.css';
 
+// Falls back to localhost when running `npm run dev`
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
 const QUESTIONS = [
     {
         id: 'q1',
@@ -151,7 +154,7 @@ export default function SurpriseForm({ onBack }) {
         }
 
         try {
-            const res = await fetch('http://localhost:3000/api/submit', {
+            const res = await fetch(`${API_URL}/api/submit`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),
